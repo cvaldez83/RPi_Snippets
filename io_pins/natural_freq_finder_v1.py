@@ -1,4 +1,4 @@
-# import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import msvcrt
 from msvcrt import getch
 from time import sleep
@@ -7,13 +7,13 @@ freq = 1    # initial frequency
 incr = .1   # desired frequency increment
 pinSolenoid = 14 # RPi pin for solenoid control
 
-# GPIO.setup(pinSolenoid,GPIO.OUT)
+GPIO.setup(pinSolenoid,GPIO.OUT)
 
 def cycleSolenoid(pin, freq):
-    # GPIO.output(pin,True)
+    GPIO.output(pin,True)
     print(f"GPIO pin {pin} set to True at frequency={freq}")
     sleep(1/freq)
-    # GPIO.output(pin,False)
+    GPIO.output(pin,False)
     print(f"GPIO pin {pin} set to False  at frequency={freq}")
     sleep(1/freq)
 
